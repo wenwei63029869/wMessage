@@ -4,6 +4,8 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
+  config.action_cable.url = "wss://w-message.herokuapp.com/cable"
+
   config.web_socket_server_url = "wss://w-message.herokuapp.com/cable"
 
   config.action_cable.allowed_request_origins = ['https://w-message.herokuapp.com', 'http://w-message.herokuapp.com']
