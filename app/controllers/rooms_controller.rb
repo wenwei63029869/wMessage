@@ -14,12 +14,11 @@ class RoomsController < ApplicationController
   end
 
   def show
-    @room = Room.find(params[:id])
-    if @room
-      @messages = @room.messages
-      render partial: 'rooms/show', locals: {room: @room, messages: @messages}
-    else
-      render :json => { :errors => @room.errors.full_messages }, status => 422
-    end
+    @room = Room.includes(:messages).find_by(id: params[:id])
+    # if @room
+    #   render partial: 'rooms/show', locals: {room: @room}
+    # else
+    #   render :json => { :errors => @room.errors.full_messages }, status => 422
+    # end
   end
 end

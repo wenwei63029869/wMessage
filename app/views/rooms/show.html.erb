@@ -1,0 +1,9 @@
+<h1><%= @room.topic %></h1>
+
+<div id='messages' data-room-id=<%= @room.id %> data-user-id=<%= current_user.id %> >
+  <%= render @room.messages %>
+</div>
+<%= render 'messages/message_form'%>
+<br/>
+
+<a href='/'>Home<a>
