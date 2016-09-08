@@ -1,10 +1,6 @@
 <h1>Chat Room</h1>
 
-<div id='messages'>
-  <%= render @messages %>
+<div id=<%= 'room-#{room.id}'>
+  <%= render room.messages %>
+  <%= render 'messages/message_form' %>
 </div>
-
-<form>
-  <label>Say something</label><br>
-  <input type='text' data-behavior='room_speaker'>
-</form>

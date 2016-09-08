@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
   def create
-    User.create(user_params)
+    @user = User.find_by(username: params['username']) || User.create(username: params['username'])
+    session[:user_id] = @user.id
+    if @user
+      render :json => @user
+    else
+      render :json => { :errors => @user.errors.full_messages }, status => 422
+    end
   end
-
-  private
-  params.require(:user).permit(:username)
 end
