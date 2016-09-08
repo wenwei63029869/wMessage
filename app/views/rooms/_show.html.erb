@@ -1,0 +1,6 @@
+<h1><%= room.topic %></h1>
+
+<div id=<%='room-#{room.id}'%> >
+  <%= render messages %>
+  <%= render 'messages/message_form' %>
+</div>

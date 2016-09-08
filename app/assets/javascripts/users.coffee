@@ -10,8 +10,9 @@ $(document).ready ->
       data: inputs
       dateType: "JSON"
       success: (data) ->
+        that.reset()
         $(that).hide()
         $('.room-section').show()
       error: (error) ->
-        console.log error
+        console.log error.responseText
 
