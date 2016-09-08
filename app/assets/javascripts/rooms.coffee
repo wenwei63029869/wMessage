@@ -15,17 +15,17 @@ $(document).ready ->
       error: (error) ->
         console.log error.responseText
 
-  $('#rooms').on 'click', (event) ->
-    if $(event.target).is( "p" )
-      event.preventDefault()
-      roomId = event.target.id
-      url = "/rooms/" + roomId
-      $.ajax
-        url: url
-        type: "PUT"
-        dateType: "JSON"
-        success: (data) ->
-          $('.room_box').empty().append data
-        error: (error) ->
-          console.log error.responseText
+  # $('#rooms').on 'click', (event) ->
+  #   if $(event.target).is( "p" )
+  #     event.preventDefault()
+  #     roomId = event.target.id
+  #     url = "/rooms/" + roomId
+  #     $.ajax
+  #       url: url
+  #       type: "PUT"
+  #       dateType: "JSON"
+  #       success: (data) ->
+  #         $('.room_box').empty().append data
+  #       error: (error) ->
+  #         console.log error.responseText
 
