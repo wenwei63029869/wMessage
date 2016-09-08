@@ -1,10 +1,9 @@
-<h1>Chat Room</h1>
+<h1><%= @room.topic %></h1>
 
-<div id='messages'>
-  <%= render @messages %>
+<div id='messages' data-room-id=<%= @room.id %> data-user-id=<%= current_user.id %> >
+  <%= render @room.messages %>
 </div>
+<%= render 'messages/message_form'%>
+<br/>
 
-<form>
-  <label>Say something</label><br>
-  <input type='text' data-behavior='room_speaker'>
-</form>
+<a href='/'>Home<a>
