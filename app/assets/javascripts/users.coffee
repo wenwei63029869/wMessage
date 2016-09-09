@@ -1,4 +1,4 @@
-$(document).ready ->
+$(document).on "turbolinks:load", ->
   $('.user_form').on 'submit', (event) ->
     event.preventDefault()
     that = this
