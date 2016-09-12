@@ -7,7 +7,7 @@ $(document).on "turbolinks:load", ->
       url: "/rooms"
       type: "POST"
       data: inputs
-      dataType: "JSON"
+      dataType: "HTML"
       success: (data) ->
         $('#rooms').append data
         that.reset()
