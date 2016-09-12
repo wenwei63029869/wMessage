@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resource :users
   post '/rooms', to: 'rooms#create'
   get '/rooms/:id', to: 'rooms#show'
+  delete '/logout', to: 'sessions#destroy'
+  post 'login', to: 'sessions#create'
 
   mount ActionCable.server => '/cable'
 end

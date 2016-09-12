@@ -1,9 +1,10 @@
 <h1><%= @room.topic %></h1>
-
-<div id='messages' data-room-id=<%= @room.id %> data-user-id=<%= current_user.id %> >
+<hr>
+<div id='messages' class='list-group' data-room-id=<%= @room.id %> data-user-id=<%= current_user.id %> >
   <%= render @room.messages %>
 </div>
 <%= render 'messages/message_form'%>
 <br/>
 
-<a href='/'>Home<a>
+<a href='/' class='btn btn-primary'>Home<a>
+<br/><br/>

@@ -1,15 +1,13 @@
 <h1>Chat Rooms</h1>
-
-<% if current_user %>
-  <div class="room-section">
-    <div id='rooms'>
-      <%= render @rooms %>
-    </div>
-    <%= render 'rooms/room_form' %>
+<hr/>
+<div class="room-section" style="display: <%= !current_user ? "none" : "inline" %>" >
+  <div id="rooms" class= "list-group">
+    <%= render @rooms %>
   </div>
-<% else %>
-  <%= render 'users/user_form' %>
-<% end %>
-
-<div class='room_box'>
+  <hr/>
+  <%= render 'rooms/room_form' %>
 </div>
+<div class='user-section' style="display: <%= current_user ? "none" : "inline"  %>" >
+  <%= render 'users/user_form' %>
+</div>
+<br/><br/>
