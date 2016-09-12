@@ -7,7 +7,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <p class="navbar-text navbar-right" style="display: <%= "none" if !current_user %>"><a class="navbar-link logout-link">Sign out</a></p>
+  <p class="navbar-text navbar-right" style="display: <%= "none" if !current_user %>"><span><%= "Sign in as #{current_user.username} " if current_user %></span><a class="navbar-link logout-link">Sign out</a></p>
   <body class='container'>
     <%= yield %>
   </body>
