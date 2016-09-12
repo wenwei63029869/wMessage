@@ -15,7 +15,6 @@ jQuery(document).on 'turbolinks:load', ->
         # Called when the subscription has been terminated by the server
 
       received: (data) ->
-        console.log data
         messages.append data['message']
         messages_to_bottom()
 
@@ -23,7 +22,7 @@ jQuery(document).on 'turbolinks:load', ->
         @perform 'speak', content: content, room_id: room_id, user_id: user_id
     $('#message_form').on 'submit', (event) ->
       that = $(this)
-      content = that.find('input[name="content"]');
+      content = that.find('textarea');
       App.global_chat.speak content.val(), $('#messages').data('room-id'), $('#messages').data('user-id')
       content.val('')
       event.preventDefault()
