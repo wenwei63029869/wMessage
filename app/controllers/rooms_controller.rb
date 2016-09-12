@@ -5,7 +5,6 @@ class RoomsController < ApplicationController
   end
 
   def create
-    redirect_to
     @room = Room.create(topic: params['topic'])
     if @room
       render partial: 'rooms/room', locals: {room: @room}
